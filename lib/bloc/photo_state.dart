@@ -18,8 +18,10 @@ class PhotoInitial extends PhotoState {
 
 class PhotosLoaded extends PhotoState {
   final AllPhotosResponse allPhotosResponse;
+  final bool hasReachedMax;
 
-  const PhotosLoaded({@required this.allPhotosResponse})
+  const PhotosLoaded(
+      {@required this.allPhotosResponse, @required this.hasReachedMax})
       : assert(allPhotosResponse != null);
 
   @override

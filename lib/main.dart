@@ -6,7 +6,7 @@ import 'package:vivsemo/pages/home_page.dart';
 import 'model/models.dart';
 
 void main() {
-  Api vivsemoApiClient = ProtobufApi("http://10.0.2.2:8080");
+  Api vivsemoApiClient = ProtobufApi("http://localhost:8080");
   runApp(MyApp(
     vivsemoApiClient: vivsemoApiClient,
   ));
@@ -22,7 +22,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => PhotoBloc(apiClient: this.vivsemoApiClient),
+      create: (context) => PhotoBloc(apiClient: this.vivsemoApiClient)
+        ..add(GetAllPhotosStarted()),
       child: new MaterialApp(
         title: "Vivsemo",
         theme: new ThemeData(

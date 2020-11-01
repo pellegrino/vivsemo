@@ -13,32 +13,24 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../../google/protobuf/empty.pb.dart' as $0;
 
 class AllPhotosResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('AllPhotosResponse',
-      package: const $pb.PackageName('com.vivsemo.api'),
-      createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('AllPhotosResponse', package: const $pb.PackageName('com.vivsemo.api'), createEmptyInstance: create)
     ..pc<Photo>(1, 'photos', $pb.PbFieldType.PM, subBuilder: Photo.create)
-    ..hasRequiredFields = false;
+    ..hasRequiredFields = false
+  ;
 
   AllPhotosResponse._() : super();
   factory AllPhotosResponse() => create();
-  factory AllPhotosResponse.fromBuffer($core.List<$core.int> i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(i, r);
-  factory AllPhotosResponse.fromJson($core.String i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(i, r);
+  factory AllPhotosResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AllPhotosResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   AllPhotosResponse clone() => AllPhotosResponse()..mergeFromMessage(this);
-  AllPhotosResponse copyWith(void Function(AllPhotosResponse) updates) =>
-      super.copyWith((message) => updates(message as AllPhotosResponse));
+  AllPhotosResponse copyWith(void Function(AllPhotosResponse) updates) => super.copyWith((message) => updates(message as AllPhotosResponse));
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static AllPhotosResponse create() => AllPhotosResponse._();
   AllPhotosResponse createEmptyInstance() => create();
-  static $pb.PbList<AllPhotosResponse> createRepeated() =>
-      $pb.PbList<AllPhotosResponse>();
+  static $pb.PbList<AllPhotosResponse> createRepeated() => $pb.PbList<AllPhotosResponse>();
   @$core.pragma('dart2js:noInline')
-  static AllPhotosResponse getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<AllPhotosResponse>(create);
+  static AllPhotosResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AllPhotosResponse>(create);
   static AllPhotosResponse _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -46,42 +38,32 @@ class AllPhotosResponse extends $pb.GeneratedMessage {
 }
 
 class Photo extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('Photo',
-      package: const $pb.PackageName('com.vivsemo.api'),
-      createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('Photo', package: const $pb.PackageName('com.vivsemo.api'), createEmptyInstance: create)
     ..aOS(1, 'title')
     ..aOS(2, 'description')
     ..aOS(3, 'url')
-    ..hasRequiredFields = false;
+    ..hasRequiredFields = false
+  ;
 
   Photo._() : super();
   factory Photo() => create();
-  factory Photo.fromBuffer($core.List<$core.int> i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(i, r);
-  factory Photo.fromJson($core.String i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(i, r);
+  factory Photo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Photo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   Photo clone() => Photo()..mergeFromMessage(this);
-  Photo copyWith(void Function(Photo) updates) =>
-      super.copyWith((message) => updates(message as Photo));
+  Photo copyWith(void Function(Photo) updates) => super.copyWith((message) => updates(message as Photo));
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Photo create() => Photo._();
   Photo createEmptyInstance() => create();
   static $pb.PbList<Photo> createRepeated() => $pb.PbList<Photo>();
   @$core.pragma('dart2js:noInline')
-  static Photo getDefault() =>
-      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Photo>(create);
+  static Photo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Photo>(create);
   static Photo _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get title => $_getSZ(0);
   @$pb.TagNumber(1)
-  set title($core.String v) {
-    $_setString(0, v);
-  }
-
+  set title($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasTitle() => $_has(0);
   @$pb.TagNumber(1)
@@ -90,10 +72,7 @@ class Photo extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get description => $_getSZ(1);
   @$pb.TagNumber(2)
-  set description($core.String v) {
-    $_setString(1, v);
-  }
-
+  set description($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
   $core.bool hasDescription() => $_has(1);
   @$pb.TagNumber(2)
@@ -102,10 +81,7 @@ class Photo extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get url => $_getSZ(2);
   @$pb.TagNumber(3)
-  set url($core.String v) {
-    $_setString(2, v);
-  }
-
+  set url($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
   $core.bool hasUrl() => $_has(2);
   @$pb.TagNumber(3)
@@ -116,10 +92,9 @@ class ApiApi {
   $pb.RpcClient _client;
   ApiApi(this._client);
 
-  $async.Future<AllPhotosResponse> getAllPhotos(
-      $pb.ClientContext ctx, $0.Empty request) {
+  $async.Future<AllPhotosResponse> getAllPhotos($pb.ClientContext ctx, $0.Empty request) {
     var emptyResponse = AllPhotosResponse();
-    return _client.invoke<AllPhotosResponse>(
-        ctx, 'Api', 'GetAllPhotos', request, emptyResponse);
+    return _client.invoke<AllPhotosResponse>(ctx, 'Api', 'GetAllPhotos', request, emptyResponse);
   }
 }
+

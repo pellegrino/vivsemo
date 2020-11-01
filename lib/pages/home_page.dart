@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vivsemo/bloc/blocs.dart';
+import 'package:vivsemo/widgets/photo_list.dart';
 import 'package:vivsemo/widgets/widgets.dart';
+
+import '../bloc/photo_bloc.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({
@@ -16,7 +19,7 @@ class HomePage extends StatelessWidget {
       appBar: new TopBar(),
       body: BlocListener<PhotoBloc, PhotoState>(
         listener: (context, state) {
-          if (state is PhotoInitial) {
+          if (state is PhotosLoaded) {
             Scaffold.of(context).showSnackBar(
               SnackBar(
                 backgroundColor: Colors.green,
@@ -32,8 +35,7 @@ class HomePage extends StatelessWidget {
             }
 
             if (state is PhotosLoaded) {
-              return Text(state.allPhotosResponse.toString());
-              // load photo gallery
+              return new PhotoList();
             }
           },
         ),

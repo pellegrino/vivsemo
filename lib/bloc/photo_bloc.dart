@@ -21,7 +21,8 @@ class PhotoBloc extends Bloc<PhotoEvent, PhotoState> {
   ) async* {
     if (event is GetAllPhotosStarted) {
       var allPhotosResponse = await this.apiClient.getAllPhotos(Empty());
-      yield (PhotosLoaded(allPhotosResponse: allPhotosResponse));
+      yield (PhotosLoaded(
+          allPhotosResponse: allPhotosResponse, hasReachedMax: false));
     }
   }
 }

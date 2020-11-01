@@ -17,29 +17,23 @@ import 'service.pbjson.dart';
 export 'service.pb.dart';
 
 abstract class ApiServiceBase extends $pb.GeneratedService {
-  $async.Future<$1.AllPhotosResponse> getAllPhotos(
-      $pb.ServerContext ctx, $0.Empty request);
+  $async.Future<$1.AllPhotosResponse> getAllPhotos($pb.ServerContext ctx, $0.Empty request);
 
   $pb.GeneratedMessage createRequest($core.String method) {
     switch (method) {
-      case 'GetAllPhotos':
-        return $0.Empty();
-      default:
-        throw $core.ArgumentError('Unknown method: $method');
+      case 'GetAllPhotos': return $0.Empty();
+      default: throw $core.ArgumentError('Unknown method: $method');
     }
   }
 
-  $async.Future<$pb.GeneratedMessage> handleCall($pb.ServerContext ctx,
-      $core.String method, $pb.GeneratedMessage request) {
+  $async.Future<$pb.GeneratedMessage> handleCall($pb.ServerContext ctx, $core.String method, $pb.GeneratedMessage request) {
     switch (method) {
-      case 'GetAllPhotos':
-        return this.getAllPhotos(ctx, request);
-      default:
-        throw $core.ArgumentError('Unknown method: $method');
+      case 'GetAllPhotos': return this.getAllPhotos(ctx, request);
+      default: throw $core.ArgumentError('Unknown method: $method');
     }
   }
 
   $core.Map<$core.String, $core.dynamic> get $json => ApiServiceBase$json;
-  $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>>
-      get $messageJson => ApiServiceBase$messageJson;
+  $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> get $messageJson => ApiServiceBase$messageJson;
 }
+

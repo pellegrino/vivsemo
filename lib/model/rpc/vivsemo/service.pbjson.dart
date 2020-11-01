@@ -10,14 +10,7 @@ import '../../google/protobuf/empty.pbjson.dart' as $0;
 const AllPhotosResponse$json = const {
   '1': 'AllPhotosResponse',
   '2': const [
-    const {
-      '1': 'photos',
-      '3': 1,
-      '4': 3,
-      '5': 11,
-      '6': '.com.vivsemo.api.Photo',
-      '10': 'photos'
-    },
+    const {'1': 'photos', '3': 1, '4': 3, '5': 11, '6': '.com.vivsemo.api.Photo', '10': 'photos'},
   ],
 };
 
@@ -33,12 +26,7 @@ const Photo$json = const {
 const ApiServiceBase$json = const {
   '1': 'Api',
   '2': const [
-    const {
-      '1': 'GetAllPhotos',
-      '2': '.google.protobuf.Empty',
-      '3': '.com.vivsemo.api.AllPhotosResponse',
-      '4': const {}
-    },
+    const {'1': 'GetAllPhotos', '2': '.google.protobuf.Empty', '3': '.com.vivsemo.api.AllPhotosResponse', '4': const {}},
   ],
 };
 
@@ -47,3 +35,4 @@ const ApiServiceBase$messageJson = const {
   '.com.vivsemo.api.AllPhotosResponse': AllPhotosResponse$json,
   '.com.vivsemo.api.Photo': Photo$json,
 };
+
