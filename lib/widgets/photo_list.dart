@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:vivsemo/bloc/blocs.dart';
 import 'package:vivsemo/model/models.dart';
 
-class PhotoList extends StatefulWidget {
+class PhotoListWidget extends StatefulWidget {
   @override
-  _PhotoListState createState() => _PhotoListState();
+  _PhotoListWidgetState createState() => _PhotoListWidgetState();
 }
 
-class _PhotoListState extends State<PhotoList> {
+class _PhotoListWidgetState extends State<PhotoListWidget> {
   final _scrollController = ScrollController();
   final _scrollThreshold = 200.0;
 
@@ -36,7 +37,12 @@ class _PhotoListState extends State<PhotoList> {
           );
         }
 
-        return ListView.builder(
+        return new StaggeredGridView.countBuilder(
+          staggeredTileBuilder: (int index) =>
+              index.isEven ? StaggeredTile.fit(2) : StaggeredTile.count(1, 1),
+          crossAxisCount: 4,
+          mainAxisSpacing: 4.0,
+          crossAxisSpacing: 4.0,
           itemBuilder: (BuildContext context, int index) {
             return index >= state.allPhotosResponse.photos.length
                 ? BottomLoader()
@@ -73,10 +79,10 @@ class PhotoWidget extends StatelessWidget {
   const PhotoWidget({@required this.photo}) : assert(photo != null);
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: Image.network(photo.url),
-      title: Text(photo.title),
-      subtitle: Text(photo.description),
+    return new Container(
+      child: new Center(
+        child: Image.network(photo.url),
+      ),
     );
   }
 }

@@ -28,17 +28,7 @@ class HomePage extends StatelessWidget {
             );
           }
         },
-        child: BlocBuilder<PhotoBloc, PhotoState>(
-          builder: (context, state) {
-            if (state is PhotoInitial) {
-              return Center(child: Text('Press the Button'));
-            }
-
-            if (state is PhotosLoaded) {
-              return new PhotoList();
-            }
-          },
-        ),
+        child: new PhotoListWidget(),
       ),
       bottomNavigationBar: ControlBar(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

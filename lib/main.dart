@@ -6,7 +6,7 @@ import 'package:vivsemo/pages/home_page.dart';
 import 'model/models.dart';
 
 void main() {
-  Api vivsemoApiClient = ProtobufApi("http://localhost:8080");
+  Api vivsemoApiClient = ProtobufApi("http://10.0.2.2:8080");
   runApp(MyApp(
     vivsemoApiClient: vivsemoApiClient,
   ));
